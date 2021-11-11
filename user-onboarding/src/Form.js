@@ -10,7 +10,7 @@ const Form = (props) => {
 
     const {username,email,password,tos} = props.values; //since we will have change handler funcy on plain props value
 
-    const {change, submit} = props;
+    const {change, submit, errors} = props;
 
     //'LOGIC' AKA 'FUNCTION' SECTION
 
@@ -29,6 +29,10 @@ const Form = (props) => {
     return (
         <div>
         <h1>WELCOME, USERS.</h1>
+        <p>{errors.username}</p>
+        <p>{errors.password}</p>
+        <p>{errors.email}</p>
+        <p>{errors.tos}</p>
         <form onSubmit={onSubmit}>
             <lable>NAME:
                 <input 
